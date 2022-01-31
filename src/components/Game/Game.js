@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {GameBoard} from "../exportedComponents";
+import {GameBoard, Button} from "../exportedComponents";
+import './Game.css'
 
 export default class Game extends Component {
     constructor() {
@@ -15,7 +16,7 @@ export default class Game extends Component {
         return (
             <div className="game">
                 {this.state.hasBegan === false ?
-                    <button onClick={() => this.startGame()}>Start game</button>
+                    <Button onClick={() => {this.startGame()}} name="Start game"/>
                 : <GameBoard /> }
             </div>
         );

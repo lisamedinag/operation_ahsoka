@@ -11,18 +11,9 @@
   justify-content: center;
 }
 
-a{
-  text-decoration: none;
-  color: black;
+.pieces img{
+  width: 10vh;
 }
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 2%;
-}
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {UnloadingArea, Containers, Button} from "../exportedComponents";
 
 export default class Game extends Component {
     constructor() {
@@ -76,21 +77,20 @@ export default class Game extends Component {
         return (
             <div className="game-board">
                 <h5>{this.state.diceRoll}</h5>
-                <button onClick={()=> {this.rollDice();}}>Dice</button>
-                <ul>
-                    Storage cabinet:
-                    <li>Cookies: {this.state.storageCabinet.blueCookies}</li>
-                    <li>Frog eggs: {this.state.storageCabinet.frogEggs}</li>
-                    <li>Frogs: {this.state.storageCabinet.frogs}</li>
-                </ul>
 
-                <p>Grus position: {this.state.grogusPosition}</p>
+                <Button onClick={() => {this.rollDice()}} name="Roll"/>
 
-                <p>Cookie container: {this.state.cookieContainer}</p>
+                {/*<ul>*/}
+                {/*    Storage cabinet*/}
+                {/*    <li>Cookies: {this.state.storageCabinet.blueCookies}</li>*/}
+                {/*    <li>Frog eggs: {this.state.storageCabinet.frogEggs}</li>*/}
+                {/*    <li>Frogs: {this.state.storageCabinet.frogs}</li>*/}
+                {/*</ul>*/}
 
-                <p>Frog eggs container: {this.state.eggContainer}</p>
+                <Containers cookieContainer={this.state.cookieContainer} eggContainer={this.state.eggContainer}
+                            frogContainer={this.state.frogContainer}/>
 
-                <p>Frogs container: {this.state.frogContainer}</p>
+                <UnloadingArea grogusPosition={this.state.grogusPosition}/>
 
             </div>
         );

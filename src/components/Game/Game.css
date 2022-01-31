@@ -1,0 +1,32 @@
+
+.game-board .container-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 30vh);
+    grid-template-rows: auto;
+}
+
+.game-board .container-wrapper .container{
+    width: 20vh;
+    padding: 2px;
+}
+
+.game-board .container-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.game-board .container-item img{
+    width: 8vh;
+}
+
+.game-board .wrapper{
+    display: grid;
+    grid-template-columns: repeat(8, 14vh);
+    grid-template-rows: auto;
+}
+
+.game-board .wrapper img {
+    width: 20vh;
+    padding: 2px;
+}
