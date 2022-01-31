@@ -16,7 +16,7 @@ export default class Game extends Component {
         return (
             <div className="game">
                 {this.state.hasBegan === false ?
-                    <Button onClick={() => {this.startGame()}} name="Start game"/>
+                    <div className="start-button"><Button onClick={() => {this.startGame()}} name="Start game"/></div>
                 : <GameBoard /> }
             </div>
         );

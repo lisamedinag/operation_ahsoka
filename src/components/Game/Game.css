@@ -1,4 +1,6 @@
-
+.game .start-button {
+    height: 70vh;
+}
 .game-board .container-wrapper{
     display: grid;
     grid-template-columns: repeat(3, 30vh);
@@ -29,4 +31,15 @@
 .game-board .wrapper img {
     width: 20vh;
     padding: 2px;
+}
+
+.game-board div{
+    margin: 2vh;
+}
+
+.game-result .lost {
+    background: url("");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
 }

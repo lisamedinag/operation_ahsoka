@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {UnloadingArea, Containers, Button} from "../exportedComponents";
+import {UnloadingArea, GameResult, Containers, Button} from "../exportedComponents";
+
+
 
 export default class Game extends Component {
     constructor() {
@@ -66,19 +68,10 @@ export default class Game extends Component {
             && this.state.storageCabinet.frogs === 0;
         const isGameLost = this.state.grogusPosition === 7;
 
-        {
-            if (isGameWon) {
-                return (<h1>YOU HAVE WON</h1>)
-
-            } else if (isGameLost) {
-                return (<h1>YOU HAVE LOST</h1>)
-            }
-        }
         return (
             <div className="game-board">
-                <h5>{this.state.diceRoll}</h5>
 
-                <Button onClick={() => {this.rollDice()}} name="Roll"/>
+                {isGameWon || isGameLost & <GameResult isGameWon={isGameWon} isGameLost={isGameLost}/>}
 
                 {/*<ul>*/}
                 {/*    Storage cabinet*/}
@@ -92,6 +85,9 @@ export default class Game extends Component {
 
                 <UnloadingArea grogusPosition={this.state.grogusPosition}/>
 
+
+                <Button onClick={() => {this.rollDice()}} name="Roll"/>
+                <h5>{this.state.diceRoll}</h5>
             </div>
         );
     }

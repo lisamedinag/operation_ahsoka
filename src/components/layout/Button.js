@@ -1,5 +1,10 @@
 import React from "react";
+import '../layout/Button.css'
 
 export default function Button (props) {
-    return <button onClick={props.onClick}>{props.name}</button>;
+    return (
+        <div className="neon-button">
+            <button onClick={props.onClick} className="neons">{props.name}</button>
+        </div>
+    )
 }
