@@ -37,9 +37,30 @@
     margin: 2vh;
 }
 
-.game-result .lost {
-    background: url("");
+.won {
+    background: url("../../assets/you-won.jpg");
     background-size:cover;
     background-repeat:no-repeat;
     background-position: center;
+    height: 80vh;
+    width: 100vh;
+}
+
+.won h1{
+    color: hsl(15, 100%, 54%);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+}
+
+.lost {
+    background: url("../../assets/you-lost.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    height: 80vh;
+    width: 100vh;
+}
+
+.lost h1{
+    color: hsl(15, 100%, 54%);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
 }

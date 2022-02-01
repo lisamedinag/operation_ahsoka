@@ -18,7 +18,7 @@ body {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  background-color: rgba(242, 182, 154, 0.61);
+  background-color: rgba(136, 102, 84, 0.61);
 
   margin: 0;
 
@@ -30,6 +30,7 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: 'Days One', sans-serif;
+  margin-top: 2vh;
 }
 
 a{
@@ -42,6 +43,22 @@ nav {
   align-items: center;
   justify-content: space-evenly;
   padding: 2%;
+  height: 10vh;
+}
+
+nav a {
+  color: hsl(15, 100%, 54%);
+}
+
+nav a:hover {
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  border-bottom: hsl(44, 71%, 54%) 3px solid ;
+  color: hsl(48, 83%, 49%);
+}
+
+.active {
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  border-bottom: hsl(15, 100%, 54%) 3px solid ;
 }
 
 ul li{
@@ -51,7 +68,7 @@ ul li{
 }
 
 p{
-  margin-top: 5vh;
+  margin: 2vh 0 2vh;
 }
 
 code {

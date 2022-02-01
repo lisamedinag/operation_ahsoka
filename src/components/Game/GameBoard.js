@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {UnloadingArea, GameResult, Containers, Button} from "../exportedComponents";
 
-
-
 export default class Game extends Component {
     constructor() {
         super();
@@ -21,11 +19,13 @@ export default class Game extends Component {
     }
 
     rollDice() {
+        // with this option it's harder to win:
+        // const diceOutcomes = ["cookie", "Grogu", "egg", "frog", "Grogu"]
+
         const diceOutcomes = ["cookie", "egg", "frog", "Grogu"]
         const randomDiceRoll = diceOutcomes[Math.floor(Math.random()*diceOutcomes.length)]
 
         this.setState({diceRoll: randomDiceRoll})
-        console.log("DICE ROOOL", randomDiceRoll)
 
          if(randomDiceRoll === "cookie" && this.state.storageCabinet.blueCookies > 0){
             this.setState(prevState => ({
@@ -59,7 +59,6 @@ export default class Game extends Component {
                 grogusPosition: this.state.grogusPosition + 1
             })
         }
-
     }
 
 
@@ -68,11 +67,14 @@ export default class Game extends Component {
             && this.state.storageCabinet.frogs === 0;
         const isGameLost = this.state.grogusPosition === 7;
 
+        {if (isGameWon) {
+                return (<GameResult isGameWon= "true"/>)
+            } else if (isGameLost) {
+                return (<GameResult isGameLost="true"/>)
+            }}
+
         return (
             <div className="game-board">
-
-                {isGameWon || isGameLost & <GameResult isGameWon={isGameWon} isGameLost={isGameLost}/>}
-
                 {/*<ul>*/}
                 {/*    Storage cabinet*/}
                 {/*    <li>Cookies: {this.state.storageCabinet.blueCookies}</li>*/}
@@ -84,7 +86,6 @@ export default class Game extends Component {
                             frogContainer={this.state.frogContainer}/>
 
                 <UnloadingArea grogusPosition={this.state.grogusPosition}/>
-
 
                 <Button onClick={() => {this.rollDice()}} name="Roll"/>
                 <h5>{this.state.diceRoll}</h5>

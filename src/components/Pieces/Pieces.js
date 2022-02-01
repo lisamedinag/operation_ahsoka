@@ -1,6 +1,5 @@
 import React from 'react';
-import {Grogu, container, cookie, egg, frog, storageCabinet, cargoArea, cargoAreaGrogu, youWon, youLost}
-    from '../../assets/exportedAssets'
+import {Grogu, container, cookie, egg, frog, storageCabinet, cargoArea} from '../../assets/exportedAssets'
 
 export default function Pieces () {
     return (
